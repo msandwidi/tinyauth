@@ -1,0 +1,45 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": {
+    "/api/*": {
+      "target": "http://localhost:5555"
+    }
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bootstrap": "^4.1.1",
+    "classnames": "^2.2.6",
+    "informed": "^1.7.2",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.2",
+    "popper.js": "^1.14.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-alert": "^4.0.4",
+    "react-alert-template-basic": "^1.0.0",
+    "react-dom": "^16.4.1",
+    "react-helmet": "^5.2.0",
+    "react-loading-bar": "0.0.7",
+    "react-redux": "^5.0.7",
+    "react-redux-loading-bar": "^4.0.5",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.4",
+    "react-sidebar": "^2.3.2",
+    "react-spinners": "^0.3.2",
+    "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "dotenv": "^6.1.0"
+  }
+}

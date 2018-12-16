@@ -1,0 +1,44 @@
+{
+	"name": "server",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"private": true,
+	"scripts": {
+		"start": "node index.js",
+		"test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha \"./{,!(node_modules)/**/}*.combined.js\"",
+		"test-watch": "nodemon --exec \"npm test\"",
+		"server": "npm start",
+		"client": "npm run start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\"",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"bcryptjs": "^2.4.3",
+		"body-parser": "^1.18.3",
+		"chalk": "^2.4.1",
+		"concurrently": "^4.1.0",
+		"connect-mongo": "^2.0.1",
+		"cors": "^2.8.4",
+		"express": "^4.16.4",
+		"express-session": "^1.15.6",
+		"express-validator": "^5.3.0",
+		"jsonwebtoken": "^8.3.0",
+		"lodash": "^4.17.11",
+		"lusca": "^1.6.1",
+		"mongoose": "^5.3.4",
+		"mongoose-timestamp": "^0.6.0",
+		"morgan": "^1.9.1",
+		"multer": "^1.4.1",
+		"rand-token": "^0.4.0",
+		"sendgrid": "^5.2.3"
+	},
+	"devDependencies": {
+		"chai": "^4.2.0",
+		"mocha": "^5.2.0",
+		"supertest": "^3.3.0"
+	}
+}

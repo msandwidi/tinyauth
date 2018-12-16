@@ -1,0 +1,55 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.loading-box {
+  width: 800px;
+  height: 800px;
+}
+
+.line {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-styled {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.form-control-styled {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-control-styled:focus {
+  z-index: 2;
+}
+
+.list-group-flush {
+  padding-left: 0
+}
+
+.default-pointer-on-hover {
+  cursor: default;
+}
+.pointer-cursor-on-hover {
+  cursor: pointer;
+}

@@ -1,0 +1,6 @@
+.page-header {
+  border-bottom: .1rem solid rgba(131, 131, 131, 0.1);
+  box-shadow: #D4D4D4;
+  padding:  12px 0;
+  margin-bottom: 15px
+}
