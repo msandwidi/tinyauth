@@ -25,7 +25,7 @@ const get_user_from_token = async (req, res) => {
 
 		return res.json({
 			success: true,
-			token,
+			token: req.token,
 			user: user.toAuthProfile()
 		});
 	} catch (error) {
@@ -455,7 +455,7 @@ const post_update_profile = async (req, res) => {
 				email
 			});
 
-			if (!existingUser || existingUser._id === req.user._id) {
+			if (!existingUser || existingUser._id.toHexString() === req.user._id.toHexString()) {
 				req.user = await req.user.updateProfile(req.body);
 
 				const emailHeader = {
