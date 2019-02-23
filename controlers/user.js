@@ -553,48 +553,48 @@ const post_change_password = async (req, res) => {
 };
 
 module.exports = (app) => {
-	app.get(`/api/v1/users/auth`, authenticate, get_user_from_token);
-	app.get(`/api/v1/users/dashboard`, authenticate, get_dashboard);
-	app.get(`/api/v1/users/my-profile`, authenticate, get_my_profile);
-	app.get(`/api/v1/users/user-profile`, authenticate, get_a_user_profile);
-	app.post(`/api/v1/users/signup`, validations.USER_SIGNUP, checkValidationErrors, post_signup);
+	app.get(`/api/v1/users/account/auth`, authenticate, get_user_from_token);
+	app.get(`/api/v1/users/account/dashboard`, authenticate, get_dashboard);
+	app.get(`/api/v1/users/account/my-profile`, authenticate, get_my_profile);
+	app.get(`/api/v1/users/account/user-profile`, authenticate, get_a_user_profile);
+	app.post(`/api/v1/users/account/signup`, validations.USER_SIGNUP, checkValidationErrors, post_signup);
 	app.get(
-		`/api/v1/users/activate/:id`,
+		`/api/v1/users/account/activate/:id`,
 		validations.USER_ACTIVATE_ACCOUNT,
 		checkValidationErrors,
 		get_activate_account
 	);
 
 	app.get(
-		`/api/v1/users/verify-reset/:id`,
+		`/api/v1/users/account/verify-reset/:id`,
 		validations.USER_VERIFY_TOKEN,
 		checkValidationErrors,
 		get_verify_reset_token
 	);
 
-	app.post(`/api/v1/users/recovery`, validations.USER_RECOVERY, checkValidationErrors, post_account_recovery);
+	app.post(`/api/v1/users/account/recovery`, validations.USER_RECOVERY, checkValidationErrors, post_account_recovery);
 
 	app.post(
-		`/api/v1/users/reset-account`,
+		`/api/v1/users/account/reset-account`,
 		requireJWTHeaderToken,
 		validations.USER_RESET_NEW_PWD,
 		checkValidationErrors,
 		post_pwd_reset
 	);
 	app.post(
-		`/api/v1/users/update-profile`,
+		`/api/v1/users/account/update-profile`,
 		authenticate,
 		validations.USER_UPDATE_PROFILE,
 		checkValidationErrors,
 		post_update_profile
 	);
 	app.post(
-		`/api/v1/users/change-password`,
+		`/api/v1/users/account/change-password`,
 		authenticate,
 		validations.USER_RESET_NEW_PWD,
 		checkValidationErrors,
 		post_change_password
 	);
-	app.post(`/api/v1/users/signin`, validations.USER_SIGNIN, checkValidationErrors, login_fetch_account, post_login);
-	app.post(`/api/v1/users/logout`, authenticate, delete_token);
+	app.post(`/api/v1/users/account/login`, validations.USER_SIGNIN, checkValidationErrors, login_fetch_account, post_login);
+	app.post(`/api/v1/users/account/logout`, authenticate, delete_token);
 };

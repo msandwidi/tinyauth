@@ -294,7 +294,8 @@ const post_create_new_account = async (req, res) => {
 			});
 		}
 
-		const tempPassword = utils.generateRandomToken(null, 24);
+		//const tempPassword = utils.generateRandomToken(null, 24);
+		const tempPassword = 123456
 
 		const newUser = new User({
 			firstname,
