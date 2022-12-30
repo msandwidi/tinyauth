@@ -25,7 +25,7 @@
     "react-redux": "^5.0.7",
     "react-redux-loading-bar": "^4.0.5",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4",
+    "react-scripts": "5.0.1",
     "react-sidebar": "^2.3.2",
     "react-spinners": "^0.3.2",
     "redux": "^4.0.0",
